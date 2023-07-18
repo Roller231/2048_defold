@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "tstl --watch"
+  },
+  "devDependencies": {
+    "@ts-defold/library": "latest",
+    "@ts-defold/tstl-export-as-global": "latest",
+    "@ts-defold/tstl-userdata-sugar": "latest",
+    "@ts-defold/types": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript-to-lua": "github:osov/typescript-to-lua",
+    "typescript-tstl-plugin": "^0.3.2"
+  }
+}

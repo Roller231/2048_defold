@@ -1,0 +1,64 @@
+{
+    "$schema": "https://raw.githubusercontent.com/TypeScriptToLua/TypeScriptToLua/master/tsconfig-schema.json",
+    "compilerOptions": {
+        "target": "es2019",
+        "lib": [
+            "es2019"
+        ],
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "types": [
+            "@ts-defold/types",
+            "@typescript-to-lua/language-extensions"
+        ],
+        "typeRoots": [
+            "@types",
+            "node_modules/@types"
+        ],
+        "rootDir": "src",
+        "outDir": "app",
+        "strict": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "sourceMap": false,
+        "plugins": [
+            {
+                "name": "typescript-tstl-plugin"
+            }
+        ]
+    },
+    "exclude": [
+        "./node_modules/*",
+        "./plugins/*"
+    ],
+    "tstl": {
+        "noHeader": true,
+        "tstlVerbose": true,
+        "noImplicitSelf": true,
+        "luaTarget": "5.1",
+        "luaLibImport": "require",
+        "sourceMapTraceback": false,
+        "trimExtensions": true,
+        "luaPlugins": [
+            {
+                "name": "@ts-defold/tstl-export-as-global",
+                "match": ".*\\..*script.ts$",
+                "globals": {
+                    "functions": [
+                        "init",
+                        "on_input",
+                        "on_message",
+                        "on_reload",
+                        "update",
+                        "final"
+                    ]
+                }
+            },
+            {
+                "name": "@ts-defold/tstl-userdata-sugar"
+            }
+        ]
+    }
+}
